@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FC Barcelona</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #080b16;
+      color: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(120deg, rgba(21, 29, 102, .92), rgba(101, 18, 54, .78)),
+        url("main.png") center / cover fixed;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem clamp(1rem, 5vw, 4rem);
+      background: rgba(0, 0, 0, .65);
+      backdrop-filter: blur(12px);
+    }
+
+    header img { width: 54px; height: 54px; object-fit: contain; }
+    header strong { font-size: clamp(1.2rem, 3vw, 1.8rem); letter-spacing: .08em; }
+
+    main {
+      width: min(1100px, 92%);
+      margin: clamp(2rem, 8vw, 6rem) auto;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: .85;
+      text-transform: uppercase;
+      text-shadow: 0 8px 28px rgba(0, 0, 0, .6);
+    }
+
+    p {
+      max-width: 650px;
+      margin: 1.5rem auto;
+      font-family: Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, .48);
+    }
+
+    figure img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    figure:hover img { transform: scale(1.03); }
+    figcaption { padding: .85rem; font-family: Arial, sans-serif; }
+
+    .video {
+      margin-top: 3rem;
+    }
+
+    video {
+      width: 100%;
+      max-height: 620px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .55);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="FC.png" alt="FC Barcelona crest">
+    <strong>FC Barcelona</strong>
+  </header>
+
+  <main>
+    <h1>Mes que un club</h1>
+    <p>A tribute to the history, players, stadium and unforgettable moments of FC Barcelona.</p>
+
+    <section class="gallery" aria-label="FC Barcelona gallery">
+      <figure>
+        <img src="about.jpg" alt="FC Barcelona team">
+        <figcaption>The team</figcaption>
+      </figure>
+      <figure>
+        <img src="stadium.png" alt="FC Barcelona stadium">
+        <figcaption>The stadium</figcaption>
+      </figure>
+      <figure>
+        <img src="Messi.jpg" alt="Lionel Messi">
+        <figcaption>A club legend</figcaption>
+      </figure>
+      <figure>
+        <img src="museum.png" alt="FC Barcelona museum">
+        <figcaption>The museum</figcaption>
+      </figure>
+    </section>
+
+    <section class="video">
+      <video controls preload="metadata" poster="main.png">
+        <source src="barca.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+  </main>
+</body>
+</html>
